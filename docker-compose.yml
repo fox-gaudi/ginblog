@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  go :
+    build: .
+    container_name: gin_blog_go
+    ports:
+      - "2324:80"
+    tty: true
+    networks:
+      - app-network
+  postgres:
+    image: postgres:14-alpine
+    container_name: gin_blog_postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+        - "5454:5432"
+    volumes:
+      - ./container_data/postgresql:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7.0.5-alpine
+    container_name: gin_blog_redis
+    ports:
+      - "6363:6379"
+    volumes:
+      - ./container_data/redis:/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
