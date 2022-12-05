@@ -10,6 +10,6 @@ COPY . .
 
 # RUN go build -v -o /usr/local/bin/app ./...
 
-CMD ["go", "run", "main.go"]
+#CMD ["go", "run", "main.go"]
 
 EXPOSE 80
