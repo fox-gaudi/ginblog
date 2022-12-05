@@ -1,9 +1,7 @@
 .idea
+.DS_Store
 
 config/config.ini
 
-container_data/postgresql/*
-container_data/redis/*
-container_data/.DS_Store
-
-.DS_Store
+!container_data/
+!migrate/
