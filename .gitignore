@@ -4,4 +4,4 @@
 config/config.ini
 
 !container_data/
-!migrate/
+!.gitkeep
