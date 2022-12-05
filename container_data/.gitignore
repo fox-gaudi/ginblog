@@ -3,4 +3,5 @@
 
 config/config.ini
 
-!container_data/
+!postgresql/
+!redis/
