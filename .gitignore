@@ -3,5 +3,4 @@
 
 config/config.ini
 
-!container_data/
-!.gitkeep
+container_data/
