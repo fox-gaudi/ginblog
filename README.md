@@ -44,6 +44,36 @@ git clone https://github.com/fox-gaudi/ginblog.git && cd ginblog.git
 docker-compose up
 ```
 
+### 项目配置文件
+
+```
+# 在config目录下, 具体使用: https://ini.unknwon.cn/ 或 https://github.com/go-ini/ini
+复制 config.ini.example 命名为 config.ini 
+```
+
+```ini
+# config.ini
+[server]
+# mode: debug release test
+APP_MODE = debug
+APP_PORT = :80
+
+# Database configuration
+[database]
+DB = postgres
+DB_HOST = gin_blog_postgres // 使用本地的话, 直接用localhost, 文件默认docker-compose环境
+DB_PORT = 5432
+DB_USER = postgres
+DB_PASSWORD = password
+DB_NAME = postgres
+
+[redis]
+REDIS_HOST = gin_blog_redis
+REDIS_PORT = 6379
+```
+
+
+
 ## Authors 关于作者
 
 * **Gaudi Fox** - Email : foxgaudi@gmail.com
