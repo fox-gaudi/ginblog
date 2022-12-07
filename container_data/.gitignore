@@ -1,7 +1,0 @@
-.idea
-.DS_Store
-
-config/config.ini
-
-!postgresql/
-!redis/

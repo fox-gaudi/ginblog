@@ -21,4 +21,5 @@ type User struct {
 	ActivatedAt  int64          `gorm:"default:null" json:"activated_at" comment:"会员激活时间"`
 	CreatedAt    int64          `gorm:"autoCreateTime" json:"created_at" comment:"创建时间"`
 	UpdatedAt    int64          `gorm:"autoCreateTime" json:"updated_at" comment:"更新时间"`
+	DeletedAt    gorm.DeletedAt `gorm:"default:null" json:"deleted_at" comment:"删除时间"`
 }

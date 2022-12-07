@@ -37,6 +37,17 @@ git clone git@github.com:fox-gaudi/ginblog.git && cd ginblog.git
 git clone https://github.com/fox-gaudi/ginblog.git && cd ginblog.git
 ```
 
+创建数据库所需要的目录:
+
+```sh
+# ginblog 根目录下 如果没有container_data就创建
+mkdir container_data && cd container_data
+
+# container_data
+mkdir postgres
+mkdir redis
+```
+
 运行项目:
 
 ```sh
