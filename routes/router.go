@@ -1,23 +1,25 @@
 package routes
 
 import (
+	"ginblog/app/api/user"
 	"ginblog/utils"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 func InitRouter() {
 	gin.SetMode(utils.AppMode)
 	r := gin.Default()
 
-	router := r.Group("api/v1")
+	routerUser := r.Group("api/user")
 	{
-		router.GET("hello", func(context *gin.Context) {
-			context.JSON(http.StatusOK, gin.H{
-				"message": "hello world",
-			})
-		})
+		routerUser.GET("api/user/show", user.Show)
+		routerUser.POST("api/user/create", user.Create)
+		routerUser.POST("api/user/update", user.Update)
+		routerUser.DELETE("api/user/delete", user.Delete)
 	}
 
-	r.Run(utils.AppPort)
+	err := r.Run(utils.AppPort)
+	if err != nil {
+		panic("服务器启动失败")
+	}
 }

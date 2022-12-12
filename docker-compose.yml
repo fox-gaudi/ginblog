@@ -20,7 +20,7 @@ services:
     ports:
         - "5454:5432"
     volumes:
-      - ./container_data/postgresql:/var/lib/postgresql/data
+      - ./container-data/postgresql:/var/lib/postgresql/data
     networks:
       - app-network
 
@@ -30,7 +30,7 @@ services:
     ports:
       - "6363:6379"
     volumes:
-      - ./container_data/redis:/data
+      - ./container-data/redis:/data
     networks:
       - app-network
 

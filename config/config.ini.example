@@ -2,7 +2,7 @@
 [server]
 # mode: debug release test
 APP_MODE = debug
-APP_PORT = :8080
+APP_PORT = :80
 
 # Database configuration
 [database]
