@@ -9,10 +9,7 @@ import (
  * @api {get} /api/user/show 获取用户信息
  */
 func Show(c *gin.Context) {
-	// 先返回一个json数据
-	c.JSON(200, gin.H{
-		"name": c.Query("name"),
-	})
+
 }
 
 // Create Path: app/api/user/user.go
