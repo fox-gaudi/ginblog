@@ -11,6 +11,7 @@ const (
 	UserAlreadyExist  = 1002 // 用户已存在
 	UserIsDisabled    = 1003 // 用户已被禁用
 	UserIsDeleted     = 1004 // 用户已被删除
+	UserParam         = 1005 // 用户已被删除
 )
 
 var userCode = map[int]string{
@@ -19,6 +20,7 @@ var userCode = map[int]string{
 	UserAlreadyExist:  "用户已存在",
 	UserIsDisabled:    "用户已被禁用",
 	UserIsDeleted:     "用户已被删除",
+	UserParam:         "参数错误",
 }
 
 func GetUserMsg(code int) string {

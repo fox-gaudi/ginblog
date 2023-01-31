@@ -1,6 +1,7 @@
 package user
 
 import (
+	"ginblog/utils/error/code"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,8 +17,24 @@ func Show(c *gin.Context) {
 /**
  * @api {post} /api/user/create 创建用户
  */
-func Create(c *gin.Context) {
 
+type CreateParam struct {
+	Username string `json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
+	Mobile   string `json:"mobile" binding:"required"`
+	Email    string `json:"email" binding:"required"`
+}
+
+func Create(c *gin.Context) {
+	var createParam CreateParam
+	if err := c.ShouldBind(&createParam); err != nil {
+		c.JSON(code.StatusOK, gin.H{
+			"msg": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(code.StatusOK, "success")
 }
 
 // Update Path: app/api/user/user.go

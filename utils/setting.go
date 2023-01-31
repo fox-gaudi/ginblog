@@ -21,8 +21,8 @@ var (
 )
 
 func init() {
-	file, error := ini.Load("config/config.ini")
-	if error != nil {
+	file, err := ini.Load("config/config.ini")
+	if err != nil {
 		fmt.Println("配置文件读取错误, 请检查文件路径")
 	}
 
